@@ -19,11 +19,14 @@ public class ShowPartyRaidCompletions {
 				EntityPlayer player = mc.player;
 				String message = event.getMessage().getUnformattedText();
 				if (message.contains("Party members:")) {
-					Matcher matcher = Pattern.compile("([^Party members][^:, ][A-Za-z0-9_]*)").matcher(message);
+					Matcher matcher = Pattern.compile("([^:, ][A-Za-z0-9_]*)").matcher(message);
 					while (matcher.find()) {
-						System.out.println("VRAI GAMING");
-						ClientCommandHandler.instance.executeCommand(player, "/edr " + matcher.group(1));
-						System.out.println(matcher.group(1));
+						if (matcher.group(1).equals("Party") || matcher.group(1).equals("members")) {
+
+						} else {
+							ClientCommandHandler.instance.executeCommand(player, "/edr " + matcher.group(1));
+						}
+
 						try {
 							TimeUnit.SECONDS.sleep(1);
 						} catch (InterruptedException e) {
