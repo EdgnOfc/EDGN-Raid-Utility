@@ -11,10 +11,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ShowPartyRaidCompletions {
+	public static boolean partyBool = false;
 	@SubscribeEvent
 	public void ignoreChatMessage(ClientChatReceivedEvent event) throws InterruptedException {
 		final Thread Threaded = new Thread() {
 			public void run() {
+				if ( partyBool == false)  return; 
 				Minecraft mc = Minecraft.getMinecraft();
 				EntityPlayer player = mc.player;
 				String message = event.getMessage().getUnformattedText();

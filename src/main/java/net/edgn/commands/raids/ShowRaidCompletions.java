@@ -34,7 +34,7 @@ public class ShowRaidCompletions extends CommandBase {
 	public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
 		final Thread Threaded = new Thread() {
 			public void run() {
-				String tag = ChatFormatting.BLACK + "[" + ChatFormatting.AQUA + "EDGN" + ChatFormatting.BLACK + "]";
+				String tag = ChatFormatting.BLACK + "[" + ChatFormatting.AQUA + "EDGN" + ChatFormatting.BLACK + "] ";
 				EntityPlayer player = Minecraft.getMinecraft().player;
 				List<String> raid_name = Arrays.asList("The Nameless Anomaly", "The Canyon Colossus",
 						"Orphion's Nexus of Light", "Nest of the Grootslangs");
